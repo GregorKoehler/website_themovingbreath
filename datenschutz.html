@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Datenschutzerklärung — themovingbreath</title>
+<style>
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/cormorant-garamond-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/cormorant-garamond-500.woff2') format('woff2'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/cormorant-garamond-600.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/inter-300.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-500.woff2') format('woff2'); }
+
+  :root {
+    --paper:       #f3ece0;
+    --paper-warm:  #e8ddc6;
+    --tan:         #b29c6d;
+    --ink:         #3a2c1c;
+    --ink-soft:    #6b5a45;
+    --ink-mute:    #948169;
+    --line-soft:   #e0d4b6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.32;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.22 0 0 0 0 0.17 0 0 0 0 0.11 0 0 0 0.05 0'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 1;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    line-height: 1;
+  }
+
+  .wordmark::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tan);
+    transform: translateY(-2px);
+    margin-right: 4px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(243, 236, 224, 0.86);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .nav-back {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-back:hover { color: var(--ink); }
+
+  main {
+    flex: 1;
+    padding: 100px 56px 140px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .legal-container { max-width: 760px; margin: 0 auto; }
+
+  .legal-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .legal-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 5.5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 48px;
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 60px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--ink);
+    margin-top: 56px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  p strong { color: var(--ink); font-weight: 500; }
+
+  ul {
+    list-style: none;
+    margin-bottom: 16px;
+    padding-left: 4px;
+  }
+
+  ul li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  ul li::before {
+    content: '·';
+    position: absolute;
+    left: 8px;
+    color: var(--ink-mute);
+  }
+
+  .placeholder {
+    background: var(--paper-warm);
+    border: 1px dashed var(--ink-mute);
+    padding: 1px 8px;
+    font-family: 'Inter', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    border-radius: 2px;
+    display: inline-block;
+    line-height: 1.5;
+  }
+
+  .legal-block {
+    padding: 28px 32px;
+    background: var(--paper-warm);
+    border: 1px solid var(--line-soft);
+    margin-bottom: 24px;
+  }
+
+  .legal-block p { margin-bottom: 8px; }
+  .legal-block p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--ink-mute);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.3s ease;
+  }
+
+  a:hover { text-decoration-color: var(--ink); }
+
+  .last-update {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+  }
+
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 56px;
+    position: relative;
+    z-index: 2;
+    font-size: 12px;
+    color: rgba(243, 236, 224, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer a {
+    color: rgba(243, 236, 224, 0.6);
+    text-decoration: none;
+    margin-left: 24px;
+  }
+
+  footer a:hover { color: var(--paper); }
+
+  @media (max-width: 700px) {
+    header { padding: 14px 24px; }
+    main { padding: 60px 24px 80px; }
+    h1 { font-size: 36px; margin-bottom: 32px; }
+    h2 { font-size: 22px; margin-top: 40px; }
+    .intro { font-size: 17px; }
+    .legal-block { padding: 20px 22px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    footer a { margin: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="wordmark">themovingbreath</a>
+  <a href="index.html" class="nav-back">← Zurück</a>
+</header>
+
+<main>
+  <div class="legal-container">
+    <div class="legal-eyebrow">Datenschutz</div>
+    <h1>Datenschutz&shy;erklärung</h1>
+
+    <p class="intro">
+      Schön, dass du hier bist. Der Schutz deiner persönlichen Daten ist mir wichtig. Auf dieser Seite findest du Informationen darüber, welche Daten beim Besuch dieser Website erhoben werden und wie damit umgegangen wird.
+    </p>
+
+    <h2>1. Verantwortliche</h2>
+    <p>
+      Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+    </p>
+    <div class="legal-block">
+      <p><strong>themovingbreath</strong></p>
+      <p><span class="placeholder">[PLATZHALTER: Vollständiger Name]</span></p>
+      <p><span class="placeholder">[PLATZHALTER: Straße und Hausnummer]</span></p>
+      <p><span class="placeholder">[PLATZHALTER: PLZ Stadt]</span></p>
+      <p>Deutschland</p>
+      <p style="margin-top: 12px;">
+        Telefon: <span class="placeholder">[PLATZHALTER: optional]</span><br>
+        E-Mail: <span class="placeholder">[PLATZHALTER: E-Mail-Adresse]</span>
+      </p>
+    </div>
+
+    <h2>2. Hosting</h2>
+    <p>
+      Diese Website wird auf <strong>GitHub Pages</strong>, einem Dienst der GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA, gehostet. GitHub ist eine Tochtergesellschaft der Microsoft Corporation.
+    </p>
+    <p>
+      Beim Aufruf dieser Website werden technisch notwendige Daten an die Server von GitHub übertragen und dort verarbeitet. Dazu gehören insbesondere:
+    </p>
+    <ul>
+      <li>IP-Adresse des aufrufenden Geräts</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>Aufgerufene Seiten und Dateien</li>
+      <li>Übertragene Datenmenge</li>
+      <li>Browser-Typ und -Version</li>
+      <li>Verwendetes Betriebssystem</li>
+      <li>Referrer-URL (zuvor besuchte Seite)</li>
+    </ul>
+    <p>
+      Diese Verarbeitung ist erforderlich, um die Website technisch ausliefern und ihre Stabilität und Sicherheit gewährleisten zu können. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Bereitstellung der Website).
+    </p>
+    <p>
+      Da GitHub Server in den USA betreibt, kann es zu einer Übermittlung personenbezogener Daten in die USA kommen. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert, sodass die Datenübermittlung auf einer angemessenen Grundlage gemäß Art. 45 DSGVO erfolgt.
+    </p>
+    <p>
+      Weitere Informationen zur Datenverarbeitung durch GitHub findest du in der Datenschutzerklärung von GitHub:
+      <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement</a>.
+    </p>
+
+    <h2>3. Aufruf dieser Website (Server-Logdaten)</h2>
+    <p>
+      Ich selbst betreibe keine eigenen Logdateien und führe keine eigene Auswertung der oben genannten Daten durch. Eine Speicherung der Daten zu deiner Person erfolgt durch mich nicht.
+    </p>
+
+    <h2>4. Cookies und lokaler Speicher</h2>
+    <p>
+      Diese Website setzt keine Tracking- oder Marketing-Cookies. Für die Sprachauswahl (Deutsch / Englisch) wird ein Eintrag im lokalen Speicher (<em>localStorage</em>) deines Browsers gesetzt, damit die gewählte Sprache beim erneuten Besuch erhalten bleibt. Dieser Eintrag enthält ausschließlich den Wert „de" oder „en" und ist nicht mit deiner Person verknüpft. Du kannst ihn jederzeit über die Einstellungen deines Browsers löschen.
+    </p>
+    <p>
+      GitHub Pages kann technisch notwendige Cookies setzen, die für den sicheren Betrieb der Plattform erforderlich sind. Diese Cookies dienen ausschließlich der Funktionsfähigkeit und Sicherheit und werden nicht zu Marketing- oder Tracking-Zwecken eingesetzt.
+    </p>
+
+    <h2>5. Schriftarten</h2>
+    <p>
+      Auf dieser Website kommen die Schriftarten „Cormorant Garamond" und „Inter" zum Einsatz. Diese sind <strong>lokal auf dem Server eingebunden</strong>. Es findet keine Verbindung zu Servern Dritter (z.B. Google Fonts) statt. Beim Aufruf der Website werden somit keine Daten an externe Anbieter zur Bereitstellung der Schriften übermittelt.
+    </p>
+
+    <h2>6. Kontaktaufnahme</h2>
+    <p>
+      Wenn du mich per E-Mail oder über Instagram kontaktierst, werden deine Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne deine Einwilligung weiter.
+    </p>
+    <p>
+      Die Verarbeitung der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Anbahnung oder Erfüllung eines Vertrages) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung deiner Anfrage).
+    </p>
+    <p>
+      Deine Anfrage und die damit verbundenen personenbezogenen Daten werden gelöscht, sobald sie für den Zweck der Bearbeitung nicht mehr erforderlich sind, spätestens jedoch nach Ablauf gesetzlicher Aufbewahrungsfristen.
+    </p>
+
+    <h2>7. Externe Links (Instagram)</h2>
+    <p>
+      Diese Website enthält Links zu externen Diensten, insbesondere zu meinem Instagram-Profil (<a href="https://www.instagram.com/themovingbreath/" target="_blank" rel="noopener">@themovingbreath</a>). Beim Klick auf einen solchen Link verlässt du diese Website. Auf die Datenverarbeitung durch die jeweiligen Anbieter habe ich keinen Einfluss. Bitte informiere dich auf den Websites der Drittanbieter über deren Datenschutzbestimmungen.
+    </p>
+    <p>
+      Solange du die externen Links nicht aktiv anklickst, werden keine Daten an die jeweiligen Anbieter übermittelt.
+    </p>
+
+    <h2>8. Deine Rechte als betroffene Person</h2>
+    <p>
+      Soweit ich personenbezogene Daten von dir verarbeite, hast du folgende Rechte:
+    </p>
+    <ul>
+      <li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO) — du kannst Auskunft über deine verarbeiteten Daten verlangen.</li>
+      <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO) — du kannst die Berichtigung unrichtiger Daten verlangen.</li>
+      <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO) — du kannst die Löschung deiner Daten verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+      <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO).</li>
+      <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO).</li>
+      <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO) — du kannst der Verarbeitung deiner Daten widersprechen.</li>
+      <li><strong>Beschwerderecht bei einer Aufsichtsbehörde</strong> (Art. 77 DSGVO).</li>
+    </ul>
+    <p>
+      Zur Geltendmachung deiner Rechte genügt eine formlose E-Mail an <span class="placeholder">[PLATZHALTER: E-Mail-Adresse]</span>.
+    </p>
+
+    <h2>9. Zuständige Aufsichtsbehörde</h2>
+    <div class="legal-block">
+      <p><span class="placeholder">[PLATZHALTER: zuständige Landesdatenschutzbehörde des Bundeslandes — z.B. „Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg"]</span></p>
+      <p><span class="placeholder">[PLATZHALTER: Anschrift]</span></p>
+      <p style="margin-top: 12px;">
+        Eine Liste aller Aufsichtsbehörden in Deutschland: <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">bfdi.bund.de</a>
+      </p>
+    </div>
+
+    <h2>10. Aktualität dieser Datenschutzerklärung</h2>
+    <p>
+      Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen meiner Leistungen umzusetzen, etwa wenn neue Funktionen auf der Website ergänzt werden. Für deinen erneuten Besuch gilt dann die neue Datenschutzerklärung.
+    </p>
+
+    <p class="last-update">
+      Stand: <span class="placeholder">[PLATZHALTER: Datum, z.B. „Mai 2026"]</span>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 themovingbreath</span>
+  <span>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </span>
+</footer>
+
+</body>
+</html>
