@@ -1591,10 +1591,16 @@
     });
   }
 
-  // Direktlink-Support: index.html#breathwork bzw. #yoga öffnet gleich den passenden Tab (für QR-Codes)
+  // Direktlink-Support: index.html#breathwork bzw. #yoga für QR-Codes.
+  // Landet oben bei "Schön, dass du da bist" und zeigt beim Weiterscrollen
+  // direkt die passende Variante (kein Sprung ins mittlere Panel).
   (function() {
     var tab = location.hash.replace('#', '');
-    if (tab === 'breathwork' || tab === 'yoga') switchTab(tab);
+    if (tab === 'breathwork' || tab === 'yoga') {
+      document.getElementById('panel-breathwork').classList.toggle('active', tab === 'breathwork');
+      document.getElementById('panel-yoga').classList.toggle('active', tab === 'yoga');
+      setActivePill(tab);
+    }
   })();
 </script>
 
