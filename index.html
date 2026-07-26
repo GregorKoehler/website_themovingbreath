@@ -8,45 +8,21 @@
 <link rel="icon" type="image/png" href="files/logo.png" />
 
 <!-- Fonts: a refined serif for body, a soft display serif for headlines, an editorial italic for accents -->
-<style>
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('fonts/cormorant-garamond-300-italic-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url('fonts/cormorant-garamond-300-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/cormorant-garamond-400-italic-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/cormorant-garamond-400-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/cormorant-garamond-300-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/cormorant-garamond-300-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/cormorant-garamond-400-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/cormorant-garamond-400-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/cormorant-garamond-500-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/cormorant-garamond-500-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url('fonts/fraunces-300-italic-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url('fonts/fraunces-300-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/fraunces-300-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/fraunces-300-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/fraunces-400-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/fraunces-400-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/fraunces-500-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/fraunces-500-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/quicksand-300-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/quicksand-300-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/quicksand-400-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/quicksand-400-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/quicksand-500-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Quicksand';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/quicksand-500-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-</style>
+<!-- Lokal gehostet (DSGVO): keine Verbindung zu Google-Servern -->
+<link href="files/fonts/local.css" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #cdb98a;            /* warm tan, lighter */
-    --bg-deep: #bea272;       /* deeper tone */
-    --bg-soft: #dac99e;       /* softer highlight */
+    --bg: #e8dab6;            /* warm tan, lighter */
+    --bg-deep: #dccaa0;       /* deeper tone */
+    --bg-soft: #f1e7cd;       /* softer highlight */
     --ink: #3a2616;           /* near-black brown */
     --ink-soft: #5b3d23;      /* warm brown */
     --accent: #7a5a2e;        /* the lighter gold from the headline */
     --fern: #9aa363;          /* dusty fern green */
     --fern-deep: #6b7340;     /* deeper fern */
     --cream: #efe2c8;         /* soft cream highlight */
-    --paper: #d9c098;         /* lighter paper */
+    --paper: #f0e2c2;         /* lighter paper */
 
     --serif-display: 'Fraunces', Georgia, serif;
     --serif-body: 'Cormorant Garamond', Georgia, serif;
@@ -499,47 +475,6 @@
     color: var(--ink-soft);
   }
 
-  /* scroll cue */
-  .scroll-cue {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.36em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    opacity: 0;
-    animation: fadeIn 1.5s ease 1.6s forwards;
-    z-index: 3;
-  }
-  .scroll-cue .line {
-    width: 1px;
-    height: 36px;
-    background: var(--ink-soft);
-    position: relative;
-    overflow: hidden;
-  }
-  .scroll-cue .line::after {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--ink);
-    animation: scrollDown 2s ease-in-out infinite;
-  }
-  @keyframes scrollDown {
-    0%   { top: -100%; }
-    100% { top: 100%; }
-  }
-
   @keyframes rise {
     to { opacity: 1; transform: translateY(0); }
   }
@@ -661,61 +596,6 @@
   .offering-card:nth-child(1):hover { transform: translateY(16px); }
   .offering-card:nth-child(4) { transform: translateY(20px); }
   .offering-card:nth-child(4):hover { transform: translateY(16px); }
-
-  /* ---------- INVITATION (pull-quote section) ---------- */
-  .invitation {
-    text-align: center;
-    padding: 160px 40px;
-    background: var(--bg-deep);
-    position: relative;
-    overflow: hidden;
-  }
-  .invitation::before, .invitation::after {
-    content: "";
-    position: absolute;
-    width: 380px; height: 380px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(154,163,99,0.25), transparent 70%);
-    pointer-events: none;
-  }
-  .invitation::before { top: -120px; left: -100px; }
-  .invitation::after { bottom: -140px; right: -120px; background: radial-gradient(circle, rgba(122,90,46,0.3), transparent 70%); }
-
-  .invitation .quote-mark {
-    font-family: var(--serif-display);
-    font-style: italic;
-    font-size: 120px;
-    line-height: 1;
-    color: var(--accent);
-    margin-bottom: -30px;
-    opacity: 0.4;
-  }
-  .invitation blockquote {
-    font-family: var(--serif-display);
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(28px, 3.6vw, 48px);
-    line-height: 1.3;
-    color: var(--ink);
-    max-width: 900px;
-    margin: 0 auto 36px;
-    position: relative;
-    z-index: 2;
-  }
-  .invitation blockquote em {
-    font-style: normal;
-    color: var(--accent);
-  }
-  .invitation cite {
-    font-family: var(--sans);
-    font-size: 12px;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-style: normal;
-    position: relative;
-    z-index: 2;
-  }
 
   /* ---------- ABOUT LU ---------- */
   .about {
@@ -874,7 +754,7 @@
   }
   .schedule-details {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.1fr 1.05fr 0.55fr;
     gap: 24px;
     margin-bottom: 32px;
     padding: 24px 0;
@@ -887,7 +767,7 @@
     letter-spacing: 0.36em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 6px;
+    margin-bottom: 14px;
   }
   .detail-value {
     font-family: var(--serif-body);
@@ -994,15 +874,6 @@
     position: relative;
     overflow: hidden;
   }
-  .contact-fern {
-    position: absolute;
-    width: 600px;
-    opacity: 0.25;
-    pointer-events: none;
-  }
-  .contact-fern.tl { top: 40px; left: -120px; transform: rotate(-20deg); }
-  .contact-fern.br { bottom: 40px; right: -120px; transform: rotate(160deg); }
-
   .contact .section-title {
     margin: 0 auto 28px;
   }
@@ -1107,7 +978,7 @@
     .nav.scrolled { padding: 12px 22px; }
     .nav-links { display: none; }
     .nav-brand { font-size: 24px !important; }
-    .nav-brand img { width: 44px; height: 44px; }
+    .nav-brand img { width: 72px; height: 72px; }
     .hero {
       grid-template-columns: 1fr;
       padding: 120px 24px 60px;
@@ -1128,6 +999,7 @@
     .orbit-dot.d5 { transform: translate(72px, -168px); }
 
     section { padding: 90px 28px; }
+    .bw-intro, .bw-types { padding-left: 28px; padding-right: 28px; }
     .offering-grid,
     .about-grid,
     .schedule-grid,
@@ -1146,9 +1018,8 @@
     .about-portrait .badge span { font-size: 22px; }
     .schedule-card { padding: 40px 30px; }
     .schedule-card h3 { font-size: 32px; }
+    .schedule-details { grid-template-columns: 1fr; gap: 20px; }
     .location { padding: 90px 28px; }
-    .scroll-cue { display: none; }
-    .invitation { padding: 100px 24px; }
     .contact { padding: 100px 24px 80px; }
     .contact-channels { gap: 14px; }
   }
@@ -1208,6 +1079,15 @@
     #willkommen .hero { padding-top: 145px; }
   }
 
+  /* Mobile-Navigation: Schriftzug ausblenden (Logo bleibt), Tabs kompakter */
+  @media (max-width: 600px) {
+    .nav-brand span { display: none; }
+    .nav-brand { flex: 1; justify-content: center; margin-left: -22px; }
+    .tab-btn { padding: 9px 18px; font-size: 12px; letter-spacing: 0.16em; }
+    .eyebrow { align-items: flex-start; }
+    .eyebrow::before { margin-top: 9px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1243,11 +1123,6 @@
       <span style="font-family: var(--serif-display); font-size: 1.15em; color: var(--ink);">the <em style="color: var(--accent);">moving</em> breath</span> steht für die Verbindung von Bewegung und Atem, getragen von Musik. Diese Verbindung kannst du bei mir auf zwei Arten erleben. Im Yoga bewegst du dich im Rhythmus deines Atems, draußen im Wald. Während einer Atemreise setzt du deinen Atem bewusst ein, um etwas in dir zu bewegen. Schau dich gern um.
     </p>
   </div>
-
-  <div class="scroll-cue">
-    <span>scroll</span>
-    <span class="line"></span>
-  </div>
 </header>
 
 </div><!-- /panel-willkommen -->
@@ -1266,13 +1141,6 @@
     <p class="hero-lead">
       Ich lade dich ein zu anderthalb Stunden Vinyasa Yoga, egal ob du gerade anfängst oder schon lange übst. Ein Raum zum Ankommen, zum Loslassen und zum freien Fließen zwischen Pose und Atemzug.
     </p>
-  </div>
-
-
-
-  <div class="scroll-cue">
-    <span>scroll</span>
-    <span class="line"></span>
   </div>
 </header>
 
@@ -1356,20 +1224,6 @@
 </section>
 
 
-<!-- ====================== INVITATION ====================== -->
-<section class="invitation">
-  <div class="reveal">
-    <div class="quote-mark">"</div>
-    <blockquote>
-      Bringe deinen Körper durch fließende Bewegungen
-      <em>in Einklang mit deinem Atem.</em>
-    </blockquote>
-    <cite>— Die Einladung</cite>
-  </div>
-</section>
-
-
-
 </div><!-- /panel-yoga -->
 
 <!-- ====================== BREATHWORK PANEL ====================== -->
@@ -1385,10 +1239,6 @@
     <p class="hero-lead">
       Er begleitet dich durch jeden Moment deines Lebens, meist unbemerkt. Doch sobald du beginnst, bewusst zu atmen, wird er zu einem kraftvollen Werkzeug: für mehr Ruhe, mehr Energie und einen tieferen Zugang zu dir selbst.
     </p>
-  </div>
-  <div class="scroll-cue">
-    <span>scroll</span>
-    <span class="line"></span>
   </div>
 </header>
 
@@ -1458,20 +1308,23 @@
             <div class="detail-label">Wann</div>
             <div class="detail-value">
 <!-- ↓↓↓ HIER TERMINE BEARBEITEN ↓↓↓ -->
-              <div class="bw-termin"><strong>Sonntag, 12. Juli 2026</strong><span class="bw-zeit">17:30 bis 20:00 Uhr</span></div>
-              <div class="bw-termin"><strong>Dienstag, 4. August 2026</strong><span class="bw-zeit">18:30 bis 21:00 Uhr</span></div>
-              <div class="bw-termin"><strong>Dienstag, 22. September 2026</strong><span class="bw-zeit">18:30 bis 21:00 Uhr</span></div>
-              <div class="bw-termin"><strong>Sonntag, 18. Oktober 2026</strong><span class="bw-zeit">17:30 bis 20:00 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag,<br/>18. Oktober 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag,<br/>15. November 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag,<br/>13. Dezember 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
 <!-- ↑↑↑ ENDE TERMINE ↑↑↑ -->
             </div>
           </div>
           <div>
             <div class="detail-label">Wo</div>
-            <div class="detail-value"><strong>Lichtraum</strong><br/>Vauban, Freiburg</div>
+            <div class="detail-value" style="line-height:1.3;"><strong>Simoon Yoga Studio</strong><span style="font-size:0.7em; color: var(--ink-soft); display:block;">Erbprinzenstr. 6<br/>Freiburg</span></div>
+          </div>
+          <div>
+            <div class="detail-label">Beitrag</div>
+            <div class="detail-value" style="line-height:1.1;">35–45 €<br/><span style="font-size:0.7em; color: var(--ink-soft); display:inline-block; margin-top:8px;">nach eigenem Ermessen</span></div>
           </div>
         </div>
 
-        <p>Alle Erfahrungsstufen willkommen.</p>
+        <p>Alle Erfahrungsstufen willkommen.<br/>Ihr seid eine Gruppe und wünscht euch einen eigenen Termin? Meldet euch gern, wir finden gemeinsam eine passende Zeit.</p>
 
         <div class="bw-einzel">
           <div class="detail-label" style="margin-bottom:6px;">Einzel &amp; Partnersessions</div>
@@ -1505,10 +1358,10 @@
         <div class="section-eyebrow">Über mich</div>
         <h2 class="section-title">Hi, ich bin <em>Lu.</em></h2>
         <p>
-          Ich bin Yogalehrerin, Breathwork Facilitatorin und habe Soziale Arbeit studiert. Die vielfältigen Erfahrungen, die ich in den letzten Jahren sammeln durfte, fließen in meine Arbeit ein.
+          Durch meine eigene Yoga-Praxis habe ich früh erfahren, was Bewegung in Verbindung mit Atmung bewirken kann. Während meiner Yogalehrerausbildung ist dieses Verständnis noch einmal gewachsen, und ich habe gelernt, anderen Menschen denselben Zugang zu ermöglichen. Und als ich schließlich Breathwork begegnet bin, wurde mir klar, wie viel Kraft allein durch den Atem entstehen kann, und wie viel dadurch innerlich in Bewegung gerät.
         </p>
         <p>
-          Mich interessiert, was Menschen stärkt. Und ich habe erlebt, wie viel Kraft in den einfachsten Dingen steckt: Atem, Bewegung und Zeit in der Natur. In meinen Yoga- und Breathwork-Stunden möchte ich Räume schaffen, in denen Menschen zur Ruhe kommen und wieder in Kontakt mit sich selbst treten können.
+          Ich glaube daran, dass jeder Mensch Zugang zu seinen eigenen Stärken hat. Manchmal braucht es nur einen Raum, der es ermöglicht, wieder mehr in Kontakt zu sich selbst zu kommen. Genau diesen Raum möchte ich durch <span style="font-family: var(--serif-display); font-size: 0.9em; color: var(--ink);">the <em style="color: var(--accent);">moving</em> breath</span> als Yoga-Lehrerin und Breathwork Facilitatorin auf unterschiedliche Weise anbieten. Denn ich bin überzeugt von der Kraft so einfach erscheinender Dinge wie Bewegung, Atem, Natur und Musik.
         </p>
 
       </div>
@@ -1518,46 +1371,6 @@
 
 <!-- ====================== CONTACT ====================== -->
 <section class="contact" id="contact">
-
-  <svg class="contact-fern tl" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g stroke="#9aa363" stroke-width="1.2" fill="#9aa363" fill-opacity="0.5">
-      <path d="M200 20 Q205 200 200 580" stroke-width="2" fill="none"/>
-      <g>
-        <ellipse cx="155" cy="120" rx="28" ry="11" transform="rotate(-32 155 120)"/>
-        <ellipse cx="140" cy="160" rx="34" ry="13" transform="rotate(-34 140 160)"/>
-        <ellipse cx="125" cy="205" rx="40" ry="14" transform="rotate(-36 125 205)"/>
-        <ellipse cx="115" cy="250" rx="46" ry="16" transform="rotate(-38 115 250)"/>
-        <ellipse cx="108" cy="298" rx="50" ry="17" transform="rotate(-40 108 298)"/>
-        <ellipse cx="105" cy="348" rx="52" ry="18" transform="rotate(-42 105 348)"/>
-        <ellipse cx="245" cy="120" rx="28" ry="11" transform="rotate(32 245 120)"/>
-        <ellipse cx="260" cy="160" rx="34" ry="13" transform="rotate(34 260 160)"/>
-        <ellipse cx="275" cy="205" rx="40" ry="14" transform="rotate(36 275 205)"/>
-        <ellipse cx="285" cy="250" rx="46" ry="16" transform="rotate(38 285 250)"/>
-        <ellipse cx="292" cy="298" rx="50" ry="17" transform="rotate(40 292 298)"/>
-        <ellipse cx="295" cy="348" rx="52" ry="18" transform="rotate(42 295 348)"/>
-      </g>
-    </g>
-  </svg>
-
-  <svg class="contact-fern br" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g stroke="#9aa363" stroke-width="1.2" fill="#9aa363" fill-opacity="0.5">
-      <path d="M200 20 Q205 200 200 580" stroke-width="2" fill="none"/>
-      <g>
-        <ellipse cx="155" cy="120" rx="28" ry="11" transform="rotate(-32 155 120)"/>
-        <ellipse cx="140" cy="160" rx="34" ry="13" transform="rotate(-34 140 160)"/>
-        <ellipse cx="125" cy="205" rx="40" ry="14" transform="rotate(-36 125 205)"/>
-        <ellipse cx="115" cy="250" rx="46" ry="16" transform="rotate(-38 115 250)"/>
-        <ellipse cx="108" cy="298" rx="50" ry="17" transform="rotate(-40 108 298)"/>
-        <ellipse cx="105" cy="348" rx="52" ry="18" transform="rotate(-42 105 348)"/>
-        <ellipse cx="245" cy="120" rx="28" ry="11" transform="rotate(32 245 120)"/>
-        <ellipse cx="260" cy="160" rx="34" ry="13" transform="rotate(34 260 160)"/>
-        <ellipse cx="275" cy="205" rx="40" ry="14" transform="rotate(36 275 205)"/>
-        <ellipse cx="285" cy="250" rx="46" ry="16" transform="rotate(38 285 250)"/>
-        <ellipse cx="292" cy="298" rx="50" ry="17" transform="rotate(40 292 298)"/>
-        <ellipse cx="295" cy="348" rx="52" ry="18" transform="rotate(42 295 348)"/>
-      </g>
-    </g>
-  </svg>
 
   <div class="reveal" style="position:relative; z-index:2;">
     <div class="section-eyebrow" style="justify-content: center; display: inline-flex;">Sag Hallo</div>
@@ -1604,7 +1417,7 @@
     <span>the <em>moving</em> breath</span>
   </div>
   <div class="footer-meta">
-    © <span id="year"></span> · Mooswald, Freiburg · <a href="https://www.instagram.com/themovingbreath/" target="_blank" rel="noopener">Instagram</a> · <a href="#" onclick="document.getElementById('health-modal').style.display='flex'; return false;">Gesundheitshinweise</a>
+    © <span id="year"></span> · Freiburg · <a href="#" onclick="document.getElementById('impressum-modal').style.display='flex'; return false;">Impressum</a> · <a href="#" onclick="document.getElementById('datenschutz-modal').style.display='flex'; return false;">Datenschutz</a> · <a href="#" onclick="document.getElementById('health-modal').style.display='flex'; return false;">Gesundheitshinweise</a>
   </div>
 </footer>
 
@@ -1632,6 +1445,66 @@
       Ich übernehme keine Haftung für gesundheitliche Schäden, psychische Belastungen, körperliche Verletzungen oder sonstige Folgeschäden, die im Zusammenhang mit der Teilnahme an meinen Angeboten entstehen könnten. Dies gilt auch für Folgeschäden, die durch eine unzureichende gesundheitliche Selbsteinschätzung entstehen.<br><br>
       Die Teilnahme erfolgt freiwillig, auf eigenes Risiko und in Eigenverantwortung.
     </div>
+  </div>
+</div>
+
+<!-- Impressum modal -->
+<div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--bg-soft); border-radius:16px; max-width:640px; width:100%; padding:48px; max-height:85vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink); opacity:0.5;">✕</button>
+    <div style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Rechtliches</div>
+    <h2 style="font-family:var(--serif-display); font-size:28px; font-style:italic; color:var(--ink); margin-bottom:20px;">Impressum</h2>
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">Angaben gemäß § 5 DDG</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Luisa Zapf<br/>
+      Schillhof 5<br/>
+      79110 Freiburg im Breisgau
+    </p>
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">Kontakt</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      E-Mail: themovingbreath@gmail.com
+    </p>
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">Verantwortlich für den Inhalt</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Luisa Zapf, Anschrift wie oben
+    </p>
+  </div>
+</div>
+
+<!-- Datenschutz modal -->
+<div id="datenschutz-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--bg-soft); border-radius:16px; max-width:640px; width:100%; padding:48px; max-height:85vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink); opacity:0.5;">✕</button>
+    <div style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Rechtliches</div>
+    <h2 style="font-family:var(--serif-display); font-size:28px; font-style:italic; color:var(--ink); margin-bottom:20px;">Datenschutzerklärung</h2>
+
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">1. Verantwortlicher</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br/>
+      Luisa Zapf, Schillhof 5, 79110 Freiburg, themovingbreath@gmail.com.
+    </p>
+
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">2. Hosting & Server-Logfiles</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite werden durch GitHub automatisch Daten in Server-Logfiles gespeichert (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp). Diese Verarbeitung dient dem sicheren und stabilen Betrieb der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Da GitHub seinen Sitz in den USA hat, kann dabei eine Übermittlung von Daten in die USA stattfinden.
+    </p>
+
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">3. Kontaktaufnahme</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Wenn du mich per E-Mail, WhatsApp oder über andere Kanäle kontaktierst, werden deine Angaben zur Bearbeitung der Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung/Erfüllung eines Vertrags) bzw. lit. f DSGVO (berechtigtes Interesse an der Beantwortung).
+    </p>
+
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">4. Externe Dienste & Links</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Diese Website verlinkt auf externe Dienste (z. B. WhatsApp, Instagram). Beim Anklicken dieser Links gelten die Datenschutzbestimmungen der jeweiligen Anbieter.<br/><br/>
+      <strong>Schriftarten:</strong> Die verwendeten Schriftarten werden lokal von diesem Server ausgeliefert. Es besteht dabei keine Verbindung zu Servern Dritter (z. B. Google Fonts), und es werden keine Daten an Dritte übertragen.
+    </p>
+
+    <p style="font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">5. Deine Rechte</p>
+    <p style="font-size:16px; line-height:1.75; margin-bottom:24px;">
+      Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO) sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde. Zuständig ist in Baden-Württemberg der Landesbeauftragte für den Datenschutz und die Informationsfreiheit.
+    </p>
+
   </div>
 </div>
 
