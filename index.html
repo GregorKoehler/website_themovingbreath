@@ -1166,8 +1166,6 @@
   .cal-event {
     font-size: 9.5px;
     line-height: 1.35;
-    border-radius: 4px;
-    padding: 3px 5px;
     margin-top: 3px;
     color: var(--ink);
   }
@@ -1176,8 +1174,8 @@
     font-size: 10px;
     margin-bottom: 1px;
   }
-  .cal-event.yoga { background: rgba(122, 90, 46, 0.16); }
-  .cal-event.breathwork { background: rgba(154, 163, 99, 0.25); }
+  .cal-event.yoga strong { color: var(--accent); }
+  .cal-event.breathwork strong { color: var(--ink-soft); }
   .cal-cta {
     display: flex;
     gap: 12px;
@@ -1532,11 +1530,10 @@
 <div id="stundenplan-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)closeStundenplan()">
   <div style="background:var(--bg-soft); border-radius:16px; max-width:720px; width:100%; padding:40px 36px; max-height:85vh; overflow-y:auto; position:relative;">
     <button onclick="closeStundenplan()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink); opacity:0.5;">✕</button>
-    <div style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Termine im Überblick</div>
-    <h2 style="font-family:var(--serif-display); font-size:28px; font-style:italic; color:var(--ink); margin-bottom:24px;">Stundenplan</h2>
+    <h2 style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:24px;">Stundenplan</h2>
 
     <div class="cal-header">
-      <button class="cal-nav-btn" onclick="shiftStundenplanMonth(-1)" aria-label="Vorheriger Monat">‹</button>
+      <button class="cal-nav-btn" id="stundenplan-prev-btn" onclick="shiftStundenplanMonth(-1)" aria-label="Vorheriger Monat">‹</button>
       <div class="cal-month-label" id="stundenplan-month-label"></div>
       <button class="cal-nav-btn" onclick="shiftStundenplanMonth(1)" aria-label="Nächster Monat">›</button>
     </div>
@@ -1719,6 +1716,13 @@
   // vorher soll der Kalender keine Yoga-Termine anzeigen.
   var YOGA_START_DATE = new Date(2026, 9, 1);
 
+  // Feiertags-Ausnahmen: an diesen Donnerstagen fällt Yoga aus (Heiligabend, Silvester).
+  // Bei Bedarf hier weitere { day, month, year } ergänzen (month ist 0-basiert, 11 = Dezember).
+  var YOGA_SKIP_DATES = [
+    { day: 24, month: 11, year: 2026 },
+    { day: 31, month: 11, year: 2026 }
+  ];
+
   function getDetailValue(container, labelText) {
     if (!container) return null;
     var labels = container.querySelectorAll('.detail-label');
@@ -1814,6 +1818,9 @@
     var monthNamesDisplay = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
     var year = stundenplanState.year, month = stundenplanState.month;
     document.getElementById('stundenplan-month-label').textContent = monthNamesDisplay[month] + ' ' + year;
+    var atMinMonth = (year === YOGA_START_DATE.getFullYear() && month === YOGA_START_DATE.getMonth());
+    var prevBtn = document.getElementById('stundenplan-prev-btn');
+    prevBtn.style.visibility = atMinMonth ? 'hidden' : 'visible';
 
     var yogaWeekday = getYogaWeekday();
     var yogaEvent = getYogaEvent();
@@ -1848,7 +1855,8 @@
       num.textContent = d;
       cell.appendChild(num);
 
-      var isYogaDay = yogaEvent && yogaWeekday !== null && cellDate.getDay() === yogaWeekday && cellDate >= YOGA_START_DATE;
+      var isSkipped = YOGA_SKIP_DATES.some(function(sd) { return sd.day === d && sd.month === month && sd.year === year; });
+      var isYogaDay = yogaEvent && yogaWeekday !== null && cellDate.getDay() === yogaWeekday && cellDate >= YOGA_START_DATE && !isSkipped;
       if (isYogaDay) cell.appendChild(buildEventChip(yogaEvent));
 
       var bwEvent = bwEvents.find(function(bd) { return bd.day === d && bd.month === month && bd.year === year; });
@@ -1859,16 +1867,24 @@
   }
 
   function shiftStundenplanMonth(delta) {
-    stundenplanState.month += delta;
-    if (stundenplanState.month < 0) { stundenplanState.month = 11; stundenplanState.year--; }
-    if (stundenplanState.month > 11) { stundenplanState.month = 0; stundenplanState.year++; }
+    var next = stundenplanState.year * 12 + stundenplanState.month + delta;
+    var min = YOGA_START_DATE.getFullYear() * 12 + YOGA_START_DATE.getMonth();
+    if (next < min) return; // vor Oktober 2026 gibt es nichts zu zeigen
+    stundenplanState.year = Math.floor(next / 12);
+    stundenplanState.month = next % 12;
     renderStundenplanCalendar();
   }
 
   function openStundenplan() {
     var now = new Date();
-    stundenplanState.year = now.getFullYear();
-    stundenplanState.month = now.getMonth();
+    var minYear = YOGA_START_DATE.getFullYear(), minMonth = YOGA_START_DATE.getMonth();
+    if (now.getFullYear() < minYear || (now.getFullYear() === minYear && now.getMonth() < minMonth)) {
+      stundenplanState.year = minYear;
+      stundenplanState.month = minMonth;
+    } else {
+      stundenplanState.year = now.getFullYear();
+      stundenplanState.month = now.getMonth();
+    }
     renderStundenplanCalendar();
     document.getElementById('stundenplan-modal').style.display = 'flex';
   }
