@@ -1101,6 +1101,104 @@
     .eyebrow::before { margin-top: 9px; }
   }
 
+  /* ---------- STUNDENPLAN-KALENDER (Modal) ---------- */
+  .cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .cal-month-label {
+    font-family: var(--serif-display);
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .cal-nav-btn {
+    background: none;
+    border: 1px solid var(--ink-soft);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    color: var(--ink);
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .cal-nav-btn:hover { opacity: 1; }
+  .cal-scroll {
+    overflow-x: auto;
+    margin: 0 -4px;
+    padding: 0 4px;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    min-width: 620px;
+  }
+  .cal-weekday {
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    padding-bottom: 8px;
+  }
+  .cal-day {
+    min-height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(58, 38, 22, 0.12);
+    font-family: var(--sans);
+  }
+  .cal-day.empty { visibility: hidden; }
+  .cal-day.today { border-color: var(--accent); border-width: 2px; }
+  .cal-daynum {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .cal-event {
+    font-size: 9.5px;
+    line-height: 1.35;
+    border-radius: 4px;
+    padding: 3px 5px;
+    margin-top: 3px;
+    color: var(--ink);
+  }
+  .cal-event strong {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+  .cal-event.yoga { background: rgba(122, 90, 46, 0.16); }
+  .cal-event.breathwork { background: rgba(154, 163, 99, 0.25); }
+  .cal-cta {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .cal-cta button {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--ink-soft);
+    color: var(--ink);
+    border-radius: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  .cal-cta button:hover { opacity: 1; }
+
 </style>
 </head>
 <body>
@@ -1117,7 +1215,7 @@
   </div>
   <div class="nav-links">
     <a href="#about">Über Lu</a>
-    <a href="#schedule" class="nav-schedule-link">Stundenplan</a>
+    <a href="#" class="nav-schedule-link" onclick="openStundenplan(); return false;">Stundenplan</a>
     <a href="#contact">Kontakt</a>
   </div>
 </nav>
@@ -1317,9 +1415,9 @@
             <div class="detail-label">Wann</div>
             <div class="detail-value">
 <!-- ↓↓↓ HIER TERMINE BEARBEITEN ↓↓↓ -->
-              <div class="bw-termin"><strong>Sonntag, 18. Oktober 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
-              <div class="bw-termin"><strong>Sonntag, 15. November 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
-              <div class="bw-termin"><strong>Sonntag, 13. Dezember 2026</strong><span class="bw-zeit">17:30 bis 19:30 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag, 18. Oktober 2026</strong><span class="bw-zeit">18 bis 20 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag, 15. November 2026</strong><span class="bw-zeit">18 bis 20 Uhr</span></div>
+              <div class="bw-termin"><strong>Sonntag, 13. Dezember 2026</strong><span class="bw-zeit">18 bis 20 Uhr</span></div>
 <!-- ↑↑↑ ENDE TERMINE ↑↑↑ -->
             </div>
           </div>
@@ -1429,6 +1527,28 @@
     © <span id="year"></span> · Freiburg · <a href="#" onclick="document.getElementById('impressum-modal').style.display='flex'; return false;">Impressum</a> · <a href="#" onclick="document.getElementById('datenschutz-modal').style.display='flex'; return false;">Datenschutz</a> · <a href="#" onclick="document.getElementById('health-modal').style.display='flex'; return false;">Gesundheitshinweise</a>
   </div>
 </footer>
+
+<!-- Stundenplan modal -->
+<div id="stundenplan-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)closeStundenplan()">
+  <div style="background:var(--bg-soft); border-radius:16px; max-width:720px; width:100%; padding:40px 36px; max-height:85vh; overflow-y:auto; position:relative;">
+    <button onclick="closeStundenplan()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink); opacity:0.5;">✕</button>
+    <div style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Termine im Überblick</div>
+    <h2 style="font-family:var(--serif-display); font-size:28px; font-style:italic; color:var(--ink); margin-bottom:24px;">Stundenplan</h2>
+
+    <div class="cal-header">
+      <button class="cal-nav-btn" onclick="shiftStundenplanMonth(-1)" aria-label="Vorheriger Monat">‹</button>
+      <div class="cal-month-label" id="stundenplan-month-label"></div>
+      <button class="cal-nav-btn" onclick="shiftStundenplanMonth(1)" aria-label="Nächster Monat">›</button>
+    </div>
+
+    <div class="cal-scroll"><div class="cal-grid" id="stundenplan-cal-grid"></div></div>
+
+    <div class="cal-cta">
+      <button onclick="closeStundenplan(); switchTab('yoga');">Yoga ansehen</button>
+      <button onclick="closeStundenplan(); switchTab('breathwork');">Breathwork ansehen</button>
+    </div>
+  </div>
+</div>
 
 <!-- Health modal -->
 <div id="health-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)this.style.display='none'">
@@ -1590,14 +1710,171 @@
     updateSpy();
   })();
 
-  // "Stundenplan" link jumps to the schedule of the currently active tab
-  var scheduleLink = document.querySelector('.nav-schedule-link');
-  if (scheduleLink) {
-    scheduleLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      var s = document.querySelector('.tab-panel.active .schedule');
-      if (s) s.scrollIntoView({ behavior: 'smooth' });
+  // Stundenplan-Kalender: liest Wochentag, Uhrzeit, Dauer und Ort direkt aus
+  // den Terminkarten oben auf der Seite aus, damit nichts doppelt gepflegt
+  // werden muss (nur an einer Stelle ändern, der Kalender zieht automatisch nach).
+  var stundenplanState = { year: null, month: null };
+
+  // Yoga im Mühlhof Studio startet erst im Oktober 2026 (siehe Umzug aus dem Wald) —
+  // vorher soll der Kalender keine Yoga-Termine anzeigen.
+  var YOGA_START_DATE = new Date(2026, 9, 1);
+
+  function getDetailValue(container, labelText) {
+    if (!container) return null;
+    var labels = container.querySelectorAll('.detail-label');
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i].textContent.trim() === labelText) return labels[i].nextElementSibling;
+    }
+    return null;
+  }
+
+  function parseHourMinute(str) {
+    var m = str.match(/(\d{1,2})(?::(\d{2}))?/);
+    if (!m) return null;
+    return { h: parseInt(m[1], 10), m: m[2] ? parseInt(m[2], 10) : 0 };
+  }
+
+  function formatHourMinute(hm) {
+    return hm.m === 0 ? String(hm.h) : hm.h + ':' + (hm.m < 10 ? '0' : '') + hm.m;
+  }
+
+  function getYogaWeekday() {
+    var el = document.querySelector('.next-class-day');
+    var txt = el ? el.textContent.trim() : '';
+    var names = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+    for (var i = 0; i < names.length; i++) {
+      if (txt.indexOf(names[i]) !== -1) return i;
+    }
+    return null;
+  }
+
+  function getYogaEvent() {
+    var container = document.querySelector('#panel-yoga .schedule-details');
+    var startEl = document.querySelector('.next-class-time');
+    var durationEl = getDetailValue(container, 'Dauer');
+    var whereEl = getDetailValue(container, 'Wo');
+    if (!startEl || !durationEl || !whereEl) return null;
+
+    var start = parseHourMinute(startEl.textContent);
+    var durationMatch = durationEl.textContent.match(/\d+/);
+    var duration = durationMatch ? parseInt(durationMatch[0], 10) : 0;
+    var endMinutesTotal = start.h * 60 + start.m + duration;
+    var end = { h: Math.floor(endMinutesTotal / 60) % 24, m: endMinutesTotal % 60 };
+
+    var locationFull = whereEl.querySelector('strong') ? whereEl.querySelector('strong').textContent.trim() : whereEl.textContent.trim();
+
+    return {
+      label: 'Vinyasa Yoga',
+      time: formatHourMinute(start) + '–' + formatHourMinute(end) + ' Uhr',
+      location: locationFull.split(' ')[0]
+    };
+  }
+
+  function getBreathworkEvents() {
+    var monthNames = ['januar', 'februar', 'märz', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'dezember'];
+    var container = document.querySelector('#panel-breathwork .schedule-details');
+    var whereEl = getDetailValue(container, 'Wo');
+    var location = whereEl && whereEl.querySelector('strong') ? whereEl.querySelector('strong').textContent.trim() : '';
+
+    var out = [];
+    document.querySelectorAll('.bw-termin').forEach(function(el) {
+      var dateMatch = el.querySelector('strong').textContent.match(/(\d{1,2})\.\s*([A-Za-zäöüÄÖÜ]+)\s*(\d{4})/);
+      var zeitEl = el.querySelector('.bw-zeit');
+      var timeMatch = zeitEl ? zeitEl.textContent.match(/(\d{1,2}(?::\d{2})?)\s*(?:bis|-|–)\s*(\d{1,2}(?::\d{2})?)/) : null;
+      if (!dateMatch) return;
+      var monthIdx = monthNames.indexOf(dateMatch[2].toLowerCase());
+      if (monthIdx === -1) return;
+      out.push({
+        day: parseInt(dateMatch[1], 10),
+        month: monthIdx,
+        year: parseInt(dateMatch[3], 10),
+        label: 'Atemreise',
+        time: timeMatch ? (timeMatch[1] + '–' + timeMatch[2] + ' Uhr') : (zeitEl ? zeitEl.textContent.trim() : ''),
+        location: location
+      });
     });
+    return out;
+  }
+
+  function buildEventChip(ev) {
+    var chip = document.createElement('div');
+    chip.className = 'cal-event ' + (ev.label === 'Vinyasa Yoga' ? 'yoga' : 'breathwork');
+    var title = document.createElement('strong');
+    title.textContent = ev.label;
+    chip.appendChild(title);
+    chip.appendChild(document.createTextNode(ev.time));
+    if (ev.location) {
+      chip.appendChild(document.createElement('br'));
+      chip.appendChild(document.createTextNode(ev.location));
+    }
+    return chip;
+  }
+
+  function renderStundenplanCalendar() {
+    var monthNamesDisplay = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+    var year = stundenplanState.year, month = stundenplanState.month;
+    document.getElementById('stundenplan-month-label').textContent = monthNamesDisplay[month] + ' ' + year;
+
+    var yogaWeekday = getYogaWeekday();
+    var yogaEvent = getYogaEvent();
+    var bwEvents = getBreathworkEvents();
+    var startWeekday = new Date(year, month, 1).getDay();
+    var leading = (startWeekday + 6) % 7; // Montag als Wochenstart
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    var grid = document.getElementById('stundenplan-cal-grid');
+    grid.innerHTML = '';
+    ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'].forEach(function(l) {
+      var el = document.createElement('div');
+      el.className = 'cal-weekday';
+      el.textContent = l;
+      grid.appendChild(el);
+    });
+    for (var i = 0; i < leading; i++) {
+      var empty = document.createElement('div');
+      empty.className = 'cal-day empty';
+      grid.appendChild(empty);
+    }
+
+    var today = new Date();
+    for (var d = 1; d <= daysInMonth; d++) {
+      var cellDate = new Date(year, month, d);
+      var cell = document.createElement('div');
+      cell.className = 'cal-day';
+      if (cellDate.toDateString() === today.toDateString()) cell.classList.add('today');
+
+      var num = document.createElement('div');
+      num.className = 'cal-daynum';
+      num.textContent = d;
+      cell.appendChild(num);
+
+      var isYogaDay = yogaEvent && yogaWeekday !== null && cellDate.getDay() === yogaWeekday && cellDate >= YOGA_START_DATE;
+      if (isYogaDay) cell.appendChild(buildEventChip(yogaEvent));
+
+      var bwEvent = bwEvents.find(function(bd) { return bd.day === d && bd.month === month && bd.year === year; });
+      if (bwEvent) cell.appendChild(buildEventChip(bwEvent));
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function shiftStundenplanMonth(delta) {
+    stundenplanState.month += delta;
+    if (stundenplanState.month < 0) { stundenplanState.month = 11; stundenplanState.year--; }
+    if (stundenplanState.month > 11) { stundenplanState.month = 0; stundenplanState.year++; }
+    renderStundenplanCalendar();
+  }
+
+  function openStundenplan() {
+    var now = new Date();
+    stundenplanState.year = now.getFullYear();
+    stundenplanState.month = now.getMonth();
+    renderStundenplanCalendar();
+    document.getElementById('stundenplan-modal').style.display = 'flex';
+  }
+
+  function closeStundenplan() {
+    document.getElementById('stundenplan-modal').style.display = 'none';
   }
 
   // Direktlink-Support: index.html#breathwork bzw. #yoga für QR-Codes.
