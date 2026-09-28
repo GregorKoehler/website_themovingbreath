@@ -1540,9 +1540,8 @@
 <div id="stundenplan-modal" style="display:none; position:fixed; inset:0; background:rgba(40,25,10,0.6); z-index:9999; align-items:center; justify-content:center; padding:24px;" onclick="if(event.target===this)closeStundenplan()">
   <div style="background:var(--bg-soft); border-radius:16px; max-width:720px; width:100%; padding:40px 36px; max-height:85vh; overflow-y:auto; position:relative;">
     <button onclick="closeStundenplan()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink); opacity:0.5;">✕</button>
-    <h2 style="font-family:var(--sans); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:24px;">Stundenplan</h2>
 
-    <div class="cal-header">
+    <div class="cal-header" style="margin-top:16px;">
       <button class="cal-nav-btn" id="stundenplan-prev-btn" onclick="shiftStundenplanMonth(-1)" aria-label="Vorheriger Monat">‹</button>
       <div class="cal-month-label" id="stundenplan-month-label"></div>
       <button class="cal-nav-btn" onclick="shiftStundenplanMonth(1)" aria-label="Nächster Monat">›</button>
