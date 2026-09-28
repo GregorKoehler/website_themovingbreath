@@ -1232,6 +1232,13 @@
     opacity: 0.85;
   }
   .cal-cta button:hover { opacity: 1; }
+  .cal-cta button.cal-cta-primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg-soft);
+    opacity: 1;
+  }
+  .cal-cta button.cal-cta-primary:hover { opacity: 0.88; }
   @media (max-height: 760px) and (min-width: 769px) {
     .cal-day { min-height: 56px; padding: 5px 6px; }
     .cal-daynum { margin-bottom: 2px; }
@@ -1595,9 +1602,9 @@
     <div class="cal-scroll"><div class="cal-grid" id="stundenplan-cal-grid"></div></div>
 
     <div class="cal-cta">
+      <button class="cal-cta-primary" onclick="closeStundenplan(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });">Anmelden</button>
       <button onclick="closeStundenplan(); switchTab('yoga');">Yoga ansehen</button>
       <button onclick="closeStundenplan(); switchTab('breathwork');">Breathwork ansehen</button>
-      <button onclick="closeStundenplan(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });">Anmelden</button>
     </div>
   </div>
 </div>
